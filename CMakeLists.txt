@@ -24,12 +24,14 @@ ExternalProject_Add(gmp_external_proj
 add_library(gmp STATIC IMPORTED GLOBAL)
 set_target_properties(gmp PROPERTIES
         IMPORTED_LOCATION ${GMP_INSTALL_DIR}/lib/libgmp.a
+        INTERFACE_INCLUDE_DIRECTORIES ${GMP_INSTALL_DIR}/include
 )
 
 # link libgmpxx.a as CMake target
 add_library(gmpxx STATIC IMPORTED GLOBAL)
 set_target_properties(gmpxx PROPERTIES
         IMPORTED_LOCATION ${GMP_INSTALL_DIR}/lib/libgmpxx.a
+        INTERFACE_INCLUDE_DIRECTORIES ${GMP_INSTALL_DIR}/include
 )
 
 # create dependencies
